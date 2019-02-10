@@ -10,16 +10,16 @@ namespace PadawansTask2
             {
                 throw new ArgumentException();
             }
-            
+            if (number == int.MaxValue || number == int.MinValue)
+            {
+                throw new OverflowException();
+            }
             int temp = 0;
             for (int i = 0; i < count; i++)
             {
                 temp = temp + number + add * i;
             }
-            if (temp > int.MaxValue || temp < int.MinValue)
-            {
-                throw new OverflowException();
-            }
+            
             return temp;
             
 
